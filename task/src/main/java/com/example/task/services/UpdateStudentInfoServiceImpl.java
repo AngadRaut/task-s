@@ -26,8 +26,9 @@ public class UpdateStudentInfoServiceImpl implements UpdateStudentInfoService{
         UpdatedStudentInfo studentInfo2 =null;
 
         UpdatedStudentInfo studentInfo = new UpdatedStudentInfo();
-        Optional<StudentInfo> std = this.studentRepository.findById(id);// old object
-
+        Optional<StudentInfo> std = this.studentRepository.findById(id);// fetching the  old object
+        // saving the student with updated information
+        // check if student with this details is present in details or not
         if(std.isPresent()){
             StudentInfo studentInfo1 = std.get();
            if(studentInfo1.getId()==id){
